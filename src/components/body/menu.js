@@ -44,9 +44,9 @@ class Menu extends Component {
         return (
             <div className="container">
                 <div className="row">
-                    <CardGroup>
+                    <CardColumns>
                         {menu}
-                    </CardGroup>
+                    </CardColumns>
                     <Modal isOpen={this.state.modalOpen} onClick={this.toggleModal}>
                         <ModalBody> {dishDetail}</ModalBody>
                         <ModalFooter>
