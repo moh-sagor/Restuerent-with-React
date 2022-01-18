@@ -4,7 +4,7 @@ import Home from './Home';
 import Contact from './Contact';
 import About from './About';
 import ErrorPage from './ErrorPage'
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, } from 'react-router-dom';
 
 const Body = () => {
     return (
