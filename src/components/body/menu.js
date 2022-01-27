@@ -4,7 +4,15 @@ import COMMENTS from '../../data/comments.js';
 import MenuItem from './menuitem.js';
 import DishDetail from './dishdetails.js';
 import { CardColumns, Modal, ModalBody, ModalFooter, Button } from 'reactstrap';
+import { connect } from 'react-redux';
 
+
+const mapStateToProps = state => {
+    return {
+        dishes: state.dishes,
+        comments: state.comments
+    }
+}
 
 
 class Menu extends Component {
@@ -67,4 +75,4 @@ class Menu extends Component {
     }
 }
 
-export default Menu;
+export default connect(mapStateToProps)(Menu);
