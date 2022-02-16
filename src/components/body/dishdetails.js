@@ -15,10 +15,11 @@ const DishDetail = (props) => {
                         <p>Price : {props.dish.price} /=</p>
 
                     </CardText>
-                    <hr />
-                    <CommentForm dishId={props.dish.id} />
+
                     <hr />
                     <LoadComments comments={props.comments} />
+                    <hr />
+                    <CommentForm dishId={props.dish.id} addComment={props.addComment} />
 
 
                 </CardBody>
@@ -29,3 +30,4 @@ const DishDetail = (props) => {
 }
 
 export default DishDetail;
+

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 // import Menu from "./menu";
+import Loading from "./loading";
 
 
 class Home extends Component {
@@ -9,6 +10,7 @@ class Home extends Component {
         return (
             <div>
                 {/* <Menu /> */}
+                {<Loading />}
             </div>
         );
     }
