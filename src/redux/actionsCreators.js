@@ -16,16 +16,16 @@ export const loadDishes = dishes => ({
     type: actionTypes.LOAD_DISHES,
     payload: dishes
 })
+
 export const dishesLoading = () => ({
     type: actionTypes.DISHES_LOADING
 })
 
-export const fetchDishes = () => {
-    return dispatch => {
-        dispatch(dishesLoading());
-        setTimeout(() => {
-            dispatch(loadDishes(DISHES))
-        },
-            2000);
-    }
+export const fetchDishes = () => dispatch => {
+    dispatch(dishesLoading());
+
+    setTimeout(() => {
+        dispatch(loadDishes(DISHES))
+    },
+        2000);
 }
