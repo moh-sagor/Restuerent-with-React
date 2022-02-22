@@ -2,6 +2,8 @@
 import COMMENTS from '../data/comments';
 import { combineReducers } from 'redux';
 import * as actionTypes from './actionTypes';
+import { InitialContactForm } from './forms';
+import { createForms } from 'react-redux-form';
 
 
 const dishReducer = (dishState = { isLoading: false, dishes: [] }, action) => {
@@ -39,6 +41,10 @@ const commentReducer = (commentState = COMMENTS, action) => {
 }
 export const Reducer = combineReducers({
     dishes: dishReducer,
-    comments: commentReducer
-})
+    comments: commentReducer,
+    ...createForms({
+        feedback: InitialContactForm
+    })
+});
+
 
