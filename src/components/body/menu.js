@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 // import COMMENTS from '../../data/comments.js';
 import MenuItem from './menuitem.js';
 import DishDetail from './dishdetails.js';
-import { CardColumns, Modal, ModalBody, ModalFooter, Button } from 'reactstrap';
+import { CardColumns, Modal, ModalBody, ModalFooter, Button, Alert } from 'reactstrap';
 import { connect } from 'react-redux';
 // import * as actionTypes from '../../redux/actionTypes';
 import { addComment, fetchDishes, fetchComments } from '../../redux/actionsCreators';
@@ -55,6 +55,11 @@ class Menu extends Component {
             return (
                 <Loading />
             );
+        }
+        else if (this.props.dishes.errMess != null) {
+            return (
+                <Alert color='danger'>{this.props.dishes.errMess}</Alert>
+            )
         }
         else {
             const menu = this.props.dishes.dishes.map(item => {
